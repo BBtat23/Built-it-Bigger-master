@@ -20,11 +20,11 @@ import javax.inject.Named;
 public class MyEndpoint {
 
     /** A simple endpoint method that takes a name and says Hi back */
-    @ApiMethod(name = "getJoke")
-    public MyBean getJoke() {
+    @ApiMethod(name = "tellJoke")
+    public MyBean tellJoke() {
         MyBean response = new MyBean();
         Joker joker = new Joker();
-        response.setData(joker.getJoke());
+        response.setData(joker.tellJoke());
         return response;
     }
 

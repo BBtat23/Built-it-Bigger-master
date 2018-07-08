@@ -1,5 +1,6 @@
 package com.example.androidjokelibrary;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -12,8 +13,16 @@ public class AndroidJokeActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_communication_joke);
-        String jokeString = getIntent().getStringExtra(JOKE_INTENT);
         TextView jokeTextView = (TextView) findViewById(R.id.joke_text_view);
-        jokeTextView.setText(jokeString);
+        String jokeString = null;
+        Intent intent = getIntent();
+        jokeString = intent.getStringExtra("joke");
+
+        if (jokeString !=null){
+            jokeTextView.setText(jokeString);
+        }else {
+            jokeTextView.setText("Finding a joke");
+        }
+
     }
 }

@@ -1,18 +1,10 @@
 package com.udacity.gradle.builditbigger;
 
-import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Pair;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-import android.widget.Toast;
-
-import com.example.androidjokelibrary.AndroidJokeActivity;
-import com.example.javajokelibrary.Joker;
 
 
 public class MainActivity extends AppCompatActivity{
@@ -21,24 +13,7 @@ public class MainActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        //        new EndpointsAsyncTask().execute(new Pair<Context, String>(this, "Manfred"));
-//        //        //Create new instance to joker Library
-//        final Joker joker = new Joker();
-//        //        //Create new instance to button
-        final Button jokeButton = (Button) findViewById(R.id.button_joke);
-        jokeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                new EndpointsAsyncTask().execute();
-            }
-        });
-
-    }
-
-
-
-
+        }
         @Override
         public boolean onCreateOptionsMenu (Menu menu){
             // Inflate the menu; this adds items to the action bar if it is present.
@@ -61,6 +36,8 @@ public class MainActivity extends AppCompatActivity{
             return super.onOptionsItemSelected(item);
         }
 
-
+        public void tellJoke(View view){
+//        new EndpointAsyncTask().execute(this);
+        }
     }
 
